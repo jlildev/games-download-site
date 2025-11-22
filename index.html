@@ -1,6 +1,58 @@
-<!-- Games Section -->
-<section id="games" style="background:var(--neutral-50); padding:3rem 0 2.5rem;">
-  <div style="max-width:1100px; margin:auto;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Minimalist Game Download Site for PC & Mobile - Clean Design System" />
+  <title>Game Download Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">GAME DOWNLOAD</div>
+    <nav aria-label="Main Navigation">
+      <a href="#games" tabindex="0">PC Games</a>
+      <a href="#mobile" tabindex="0">Mobile Games</a>
+      <a href="#contact" tabindex="0">Contact</a>
+      <a href="#reviews" tabindex="0">Reviews</a>
+    </nav>
+    <button class="cta-btn" aria-label="Start Download">Start Download</button>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Minimalist Game Download Hub</h1>
+      <p>All your favorite PC and mobile games in one clean, simple platform — designed for clarity, speed, and accessibility.</p>
+      <div class="hero-actions">
+        <a href="#games" class="btn btn-primary" aria-label="Browse PC Games">Browse PC Games</a>
+        <a href="#mobile" class="btn btn-secondary" aria-label="Download Mobile Games">Download Mobile Games</a>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <div class="feature-icon" aria-label="Fast Download">⏬</div>
+          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Fast Download</div>
+          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Instant game downloads for all platforms.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-label="Secure Files">🔒</div>
+          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Secure Files</div>
+          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Scanned & verified files for maximum safety.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-label="No Ads">🚫</div>
+          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">No Ads</div>
+          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Ad-free experience with a clean interface.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-label="Responsive Design">📱</div>
+          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Responsive Design</div>
+          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Works perfectly on all devices and screens.</div>
+        </div>
+      </div>
+    </section>
+    <!-- Games Section -->
+<section id="games">
+  <div style="max-width:1100px; margin:auto; padding:3rem 0 2.5rem;">
     <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.5rem; text-align:center;">PC Games Collection</h2>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:2rem;">
       <div class="feature-card" style="min-width:200px;">
@@ -15,14 +67,12 @@
         <div style="font-size:1rem; color:var(--neutral-500);">Short game description + supported OS info.</div>
         <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
       </div>
-      <!-- Add more game cards as needed -->
     </div>
   </div>
 </section>
-
 <!-- Mobile Games Section -->
-<section id="mobile" style="background:var(--surface-white); padding:3rem 0 2.5rem; border-top:1px solid var(--neutral-200);">
-  <div style="max-width:1100px; margin:auto;">
+<section id="mobile">
+  <div style="max-width:1100px; margin:auto; padding:3rem 0 2.5rem;">
     <h2 style="font-size:2rem;color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.5rem; text-align:center;">Mobile Games Collection</h2>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:2rem;">
       <div class="feature-card">
@@ -37,21 +87,18 @@
         <div style="font-size:1rem; color:var(--neutral-500);">Tagline or short details + compatibility.</div>
         <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
       </div>
-      <!-- Add more mobile game cards as needed -->
     </div>
   </div>
 </section>
-
 <!-- Reviews Section -->
-<section id="reviews" style="background:var(--surface-white); padding:3rem 0 2.5rem;">
-  <div style="max-width:1000px; margin:auto;">
+<section id="reviews">
+  <div style="max-width:1000px; margin:auto; padding:3rem 0 2.5rem;">
     <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.25rem; text-align:center;">User Reviews</h2>
     <div style="background:var(--neutral-50); border-radius:12px; padding:2rem; text-align:center; margin-bottom:2rem; max-width:420px; margin-left:auto; margin-right:auto;">
       <span style="color:var(--accent-gold); font-size:2rem;">★★★★★</span>
       <div style="font-size:2rem; font-weight:700; color:var(--neutral-900);">4.9/5</div>
       <div style="color:var(--neutral-500); font-size:1rem;">100+ reviews</div>
     </div>
-
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem;">
       <div class="feature-card">
         <div class="feature-icon" style="background:var(--neutral-200);color:var(--neutral-400); font-size:2rem;">AA</div>
@@ -67,14 +114,12 @@
         <div style="margin:1rem 0; font-style:italic; color:var(--neutral-600); font-size:1em;">"Minimal, modern, no annoying ads — exactly what I needed!"</div>
         <span style="color:var(--accent-gold); font-size:1.2em;">★★★★★</span>
       </div>
-      <!-- More reviews can be added here -->
     </div>
   </div>
 </section>
-
 <!-- Contact Section -->
-<section id="contact" style="background:var(--surface-white); padding:3rem 0 1.5rem;">
-  <div style="max-width:700px; margin:auto;">
+<section id="contact">
+  <div style="max-width:700px; margin:auto; padding:3rem 0 1.5rem;">
     <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.25rem; text-align:center;">Contact & Support</h2>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin-bottom:2rem;">
       <div class="feature-card">
@@ -93,3 +138,9 @@
     <div style="text-align:center;color:var(--neutral-400);font-size:0.98em;">Our support team is available 7 days a week for all inquiries and suggestions.</div>
   </div>
 </section>
+  </main>
+  <footer>
+    &copy; 2025 Game Download Hub — Minimalist & Professional HTML Design System.
+  </footer>
+</body>
+</html>
