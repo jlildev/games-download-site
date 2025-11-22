@@ -1,270 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Minimalist Game Download Site for PC & Mobile - Clean Design System" />
-  <title>Game Download Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary-color: #DC1F26;
-      --primary-color-dark: #B91C1C;
-      --primary-color-light: #FCA5A5;
-      --primary-color-ultra-light: #FEE2E2;
-
-      --neutral-50: #F8FAFC;
-      --neutral-100: #F1F5F9;
-      --neutral-200: #E2E8F0;
-      --neutral-300: #CBD5E1;
-      --neutral-400: #94A3B8;
-      --neutral-500: #64748B;
-      --neutral-600: #475569;
-      --neutral-700: #334155;
-      --neutral-900: #0F172A;
-      --surface-white: #FFFFFF;
-      --accent-gold: #F59E0B;
-      --success-green: #10B981;
-
-      --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    body {
-      font-family: var(--font-body);
-      margin: 0;
-      background: var(--neutral-50);
-      color: var(--neutral-600);
-      line-height: 1.7;
-    }
-    header {
-      background: var(--surface-white);
-      border-bottom: 1px solid var(--neutral-200);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      letter-spacing: 2px;
-    }
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-    nav a {
-      color: var(--neutral-600);
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
-    }
-    nav a:hover, nav a:focus {
-      background: var(--primary-color-ultra-light);
-      color: var(--primary-color);
-    }
-    .cta-btn {
-      background: var(--primary-color);
-      color: var(--surface-white);
-      border-radius: 8px;
-      border: 2px solid var(--primary-color);
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.75rem 1.5rem;
-      box-shadow: 0 2px 6px rgba(220,31,38,0.10);
-      cursor: pointer;
-      transition: background 0.2s, border 0.2s, transform 0.2s;
-    }
-    .cta-btn:hover, .cta-btn:focus {
-      background: var(--primary-color-dark);
-      border-color: var(--primary-color-dark);
-      transform: translateY(-2px);
-    }
-    .hero {
-      background: var(--surface-white);
-      padding: 4rem 2rem 2.5rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.25rem;
-      color: var(--neutral-900);
-      font-family: var(--font-heading);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -1px;
-    }
-    .hero p {
-      font-size: 1.18rem;
-      color: var(--neutral-500);
-      margin-bottom: 2rem;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-block;
-      border-radius: 8px;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      border: 2px solid;
-      transition: background 0.2s, border 0.2s, transform 0.2s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
-      color: var(--surface-white);
-    }
-    .btn-primary:hover, .btn-primary:focus {
-      background: var(--primary-color-dark);
-      border-color: var(--primary-color-dark);
-      transform: translateY(-2px);
-    }
-    .btn-secondary {
-      background: var(--neutral-100);
-      border-color: var(--neutral-300);
-      color: var(--neutral-600);
-    }
-    .btn-secondary:hover, .btn-secondary:focus {
-      background: var(--neutral-50);
-      border-color: var(--neutral-400);
-      color: var(--primary-color);
-    }
-    .feature-cards {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .feature-card {
-      background: var(--surface-white);
-      border: 1px solid var(--neutral-200);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      min-width: 220px;
-      max-width: 250px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
-    }
-    .feature-card:hover {
-      border-color: var(--neutral-300);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      transform: translateY(-4px);
-    }
-    .feature-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--neutral-100);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--neutral-400);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .feature-card:hover .feature-icon {
-      background: var(--primary-color-ultra-light);
-      color: var(--primary-color);
-      transform: scale(1.07);
-    }
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .feature-cards {
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem;
-      }
-      nav {
-        gap: 1rem;
-      }
-      .feature-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-      .feature-card {
-        min-width: 92vw;
-        max-width: 98vw;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">GAME DOWNLOAD</div>
-    <nav aria-label="Main Navigation">
-      <a href="#games" tabindex="0">PC Games</a>
-      <a href="#mobile" tabindex="0">Mobile Games</a>
-      <a href="#contact" tabindex="0">Contact</a>
-      <a href="#reviews" tabindex="0">Reviews</a>
-    </nav>
-    <button class="cta-btn" aria-label="Start Download">Start Download</button>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>Minimalist Game Download Hub</h1>
-      <p>All your favorite PC and mobile games in one clean, simple platform — designed for clarity, speed, and accessibility.</p>
-      <div class="hero-actions">
-        <a href="#games" class="btn btn-primary" aria-label="Browse PC Games">Browse PC Games</a>
-        <a href="#mobile" class="btn btn-secondary" aria-label="Download Mobile Games">Download Mobile Games</a>
+<!-- Games Section -->
+<section id="games" style="background:var(--neutral-50); padding:3rem 0 2.5rem;">
+  <div style="max-width:1100px; margin:auto;">
+    <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.5rem; text-align:center;">PC Games Collection</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:2rem;">
+      <div class="feature-card" style="min-width:200px;">
+        <div class="feature-icon" aria-label="Game Icon">🎮</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.4rem;">Game Title 1</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">Tagline — Brief summary of the game, genre, platform.</div>
+        <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
       </div>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <div class="feature-icon" aria-label="Fast Download">⏬</div>
-          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Fast Download</div>
-          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Instant game downloads for all platforms.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-label="Secure Files">🔒</div>
-          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Secure Files</div>
-          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Scanned & verified files for maximum safety.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-label="No Ads">🚫</div>
-          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">No Ads</div>
-          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Ad-free experience with a clean interface.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon" aria-label="Responsive Design">📱</div>
-          <div class="feature-title" style="font-weight:600; color: var(--neutral-700); margin-bottom:0.6rem;">Responsive Design</div>
-          <div class="feature-desc" style="font-size:1rem; color:var(--neutral-500); text-align:center;">Works perfectly on all devices and screens.</div>
-        </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Game Icon">🕹️</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.4rem;">Game Title 2</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">Short game description + supported OS info.</div>
+        <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
       </div>
-    </section>
-    <!-- Sections: Games, Mobile, Reviews, Contact...To be added for expansion -->
-  </main>
-  <footer style="background:var(--neutral-100); border-top:1px solid var(--neutral-200); padding:2rem; text-align:center; font-size:1rem; color:var(--neutral-500)">
-    &copy; 2025 Game Download Hub — Minimalist & Professional HTML Design System.
-  </footer>
-</body>
-</html>
+      <!-- Add more game cards as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Games Section -->
+<section id="mobile" style="background:var(--surface-white); padding:3rem 0 2.5rem; border-top:1px solid var(--neutral-200);">
+  <div style="max-width:1100px; margin:auto;">
+    <h2 style="font-size:2rem;color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.5rem; text-align:center;">Mobile Games Collection</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:2rem;">
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Game Icon">📱</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.4rem;">Mobile Game 1</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">Game description for Android/iOS, supported devices.</div>
+        <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Game Icon">🎲</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.4rem;">Mobile Game 2</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">Tagline or short details + compatibility.</div>
+        <a href="#" class="btn btn-secondary" style="width:max-content; margin:1rem auto 0;">Download</a>
+      </div>
+      <!-- Add more mobile game cards as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews" style="background:var(--surface-white); padding:3rem 0 2.5rem;">
+  <div style="max-width:1000px; margin:auto;">
+    <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.25rem; text-align:center;">User Reviews</h2>
+    <div style="background:var(--neutral-50); border-radius:12px; padding:2rem; text-align:center; margin-bottom:2rem; max-width:420px; margin-left:auto; margin-right:auto;">
+      <span style="color:var(--accent-gold); font-size:2rem;">★★★★★</span>
+      <div style="font-size:2rem; font-weight:700; color:var(--neutral-900);">4.9/5</div>
+      <div style="color:var(--neutral-500); font-size:1rem;">100+ reviews</div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem;">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:var(--neutral-200);color:var(--neutral-400); font-size:2rem;">AA</div>
+        <div style="font-weight:600; color:var(--neutral-700);">Ahmed Ali, Cairo</div>
+        <div style="color:var(--neutral-400); font-size:0.95em;">2025-11-22</div>
+        <div style="margin:1rem 0; font-style:italic; color:var(--neutral-600); font-size:1em;">"أفضل موقع تحميل ألعاب خفيف وسريع جداً! التصميم مريح للعين والرابط مباشر."</div>
+        <span style="color:var(--accent-gold); font-size:1.2em;">★★★★★</span>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:var(--neutral-200);color:var(--neutral-400); font-size:2rem;">LM</div>
+        <div style="font-weight:600; color:var(--neutral-700);">Lina Mansour, Alexandria</div>
+        <div style="color:var(--neutral-400); font-size:0.95em;">2025-11-13</div>
+        <div style="margin:1rem 0; font-style:italic; color:var(--neutral-600); font-size:1em;">"Minimal, modern, no annoying ads — exactly what I needed!"</div>
+        <span style="color:var(--accent-gold); font-size:1.2em;">★★★★★</span>
+      </div>
+      <!-- More reviews can be added here -->
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="background:var(--surface-white); padding:3rem 0 1.5rem;">
+  <div style="max-width:700px; margin:auto;">
+    <h2 style="font-size:2rem; color:var(--neutral-900); font-family:var(--font-heading); font-weight:700; margin-bottom:1.25rem; text-align:center;">Contact & Support</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin-bottom:2rem;">
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Email">✉️</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.5rem;">Email Support</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">info@games-download.com</div>
+        <a href="mailto:info@games-download.com" class="btn btn-primary" style="margin-top:1rem; width:max-content;">Send Email</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="WhatsApp">💬</div>
+        <div style="font-weight:600; color:var(--neutral-700); margin-bottom:0.5rem;">WhatsApp</div>
+        <div style="font-size:1rem; color:var(--neutral-500);">Direct chat support</div>
+        <a href="https://wa.me/201234567890" class="btn btn-secondary" style="margin-top:1rem; width:max-content; background:var(--success-green); color:white; border-color:var(--success-green)">Chat</a>
+      </div>
+    </div>
+    <div style="text-align:center;color:var(--neutral-400);font-size:0.98em;">Our support team is available 7 days a week for all inquiries and suggestions.</div>
+  </div>
+</section>
